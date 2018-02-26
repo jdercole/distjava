@@ -1,10 +1,17 @@
+<%-- 
+    Document   : index
+    Created on : Feb 19, 2018, 11:42:00 AM
+    Author     : Jenna
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <title>YarnHorde</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-dark bg-dark" style="background-color: #e3f2fd;">
@@ -16,24 +23,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="products.html">Products</a>
+                <a class="nav-link" href="products">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cart.html">Shopping Cart</a>
+                <a class="nav-link" href="cart">Shopping Cart</a>
             </li>
         </ul>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+
     </div>
+
 </nav>
-<h2>Mountain Jewel</h2>
-<img src="src/yarn.jpg" class="rounded float-left" alt="Mountain Jewel skeins">
-<br>
-<p>This yarn is perfectly suited for sweaters. With a skein length of 1025, you have all you need! Soft and washable, a great choice with vibrant color!</p>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to YarnHorde!</h1>
+    <p class="lead">The best yarn vendor on the Internet. We deliver!</p>
+    <hr class="my-4">
+    <p>Come explore our extensive inventory of any and all ethically-sourced material under the sun.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="products.jsp" role="button">Explore</a>
+    </p>
+</div>
 </body>
 </html>
