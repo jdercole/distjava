@@ -1,7 +1,7 @@
 
 package edu.wctc.dj.week4.controller;
 
-import edu.wctc.dj.week4.model.ProductService;
+import edu.wctc.dj.week4.model.YarnService;
 import edu.wctc.dj.week4.model.Yarn;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,23 +42,23 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            ProductService productService = new ProductService();
+            YarnService yarnService = new YarnService();
             String id = request.getParameter("id");
             String search = request.getParameter("search");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp");
+            RequestDispatcher dispatcher = null; //request.getRequestDispatcher("/products.jsp");
             
             if(id != null) {
-                Yarn yarn = productService.getYarn(id);
+                Yarn yarn = yarnService.getYarn(id);
                 request.setAttribute("yarn", yarn);
-                dispatcher = request.getRequestDispatcher("/productDetail.jsp");
+                dispatcher = request.getRequestDispatcher("/WEB-INF/productDetail.jsp?id=" + id);
             } else if (search != null) {
-                List<Yarn> yarnList = productService.findYarns(search);
+                List<Yarn> yarnList = yarnService.findYarns(search);
                 request.setAttribute("yarnList", yarnList);
-                 dispatcher = request.getRequestDispatcher("/products.jsp");
+                dispatcher = request.getRequestDispatcher("/WEB-INF/products.jsp");
             } else {
-                List<Yarn> yarnList = productService.getAllYarns();
+                List<Yarn> yarnList = yarnService.getAllYarns();
                 request.setAttribute("yarnList", yarnList);
-                dispatcher = request.getRequestDispatcher("/products.jsp");
+                dispatcher = request.getRequestDispatcher("/WEB-INF/products.jsp");
             }
             
             dispatcher.forward(request, response);

@@ -8,17 +8,17 @@ import java.util.List;
  *
  * @author Jenna
  */
-public class ProductService {
+public class YarnService {
     private Yarn yarn;
     
     private List<Yarn> yarnList = Arrays.asList(
             new Yarn("1", "Cherry Blossom", 425.0, Color.RED, 35.99),
             new Yarn("2", "Mountain Jewel", 825.0, Color.PURPLE, 40.99),
-            new Yarn("3", "Terra Cotta", 210.0, Color.ORANGE, 16.99)
+            new Yarn("3", "Terra Cotta", 210.0, Color.ORANGE, 16.99),
+            new Yarn("4", "Smokestack", 425.0, Color.GREY, 32.99)
     );
     
     public Yarn getYarn(String id) {
-        
         Yarn yarn = null;
         for (Yarn y : yarnList) {
             if (y.getId().equals(id)) {
@@ -34,12 +34,15 @@ public class ProductService {
     
     public List<Yarn> findYarns(String search) {
         search = search.toLowerCase();
-        List<Yarn> theList = new ArrayList<Yarn>();
+        List<Yarn> yarns = new ArrayList<Yarn>();
         for (Yarn y : yarnList) {
             if (y.getName().toLowerCase().startsWith(search)) {
-                theList.add(yarn);
+                yarns.add(yarn);
             }
         }
-        return theList;
+        return yarns;
     }
+    
 }
+
+

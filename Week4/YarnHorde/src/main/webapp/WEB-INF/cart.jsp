@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
-<%@ page import="edu.wctc.dj.model.Yarn"%>
+<%@ page import="edu.wctc.dj.week4.model.Yarn"%>
 <!DOCTYPE html>
 <html>
     <head>
