@@ -9,10 +9,10 @@ public class Yarn implements Product {
     private String id;
     private String name;
     private double skeinLength;
-    private Color color;
+    private String color;
     private double price;
     
-    public Yarn(String id, String name, double skeinLength, Color color, double price) {
+    public Yarn(String id, String name, double skeinLength, String color, double price) {
         setId(id);
         setName(name);
         setSkeinLength(skeinLength);
@@ -40,23 +40,23 @@ public class Yarn implements Product {
         return skeinLength;
     }
 
-    public void setSkeinLength(double skeinLength) {
+    public final void setSkeinLength(double skeinLength) {
         this.skeinLength = skeinLength;
     }
 
-    public Color getColor() {
+    public final String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public final void setColor(String color) {
         this.color = color;
     }
 
-    public double getPrice() {
+    public final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public final void setPrice(double price) {
         this.price = price;
     }
     

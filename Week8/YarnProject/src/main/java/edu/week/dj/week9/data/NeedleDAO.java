@@ -24,7 +24,7 @@ public class NeedleDAO {
             List<Needle> needleList = new ArrayList<>();
             while(rs.next()) {
                 String needleid = rs.getString("needleid");
-                String needleType = rs.getObject("needleType", NeedleType);
+                String needleType = rs.getString("needleType");
                 String material = rs.getString("material");
                 double size = rs.getDouble("size");
                 
@@ -32,7 +32,9 @@ public class NeedleDAO {
                 needleList.add(needle);
                 
             }
+            
             return needleList;
+            
         } finally {
             if(rs!=null) rs.close();
             if(stmt!=null) stmt.close();

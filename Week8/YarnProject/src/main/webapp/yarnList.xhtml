@@ -11,7 +11,7 @@
     <h:body>
             <h:form id="form" style="text-align: center;">
                 <p:outputLabel for="cartQuantity" value="Cart:" />
-                <h:outputText id="cartQuantity" value="#{cartBean.itemsInCart}" />
+                <h:outputText id="cartQuantity" value="#{yarncartBean.itemsInCart}" />
 
                 <p:dataTable value="#{yarnBean.yarnService.allYarns}" var="yarn" 
                             rowKey="#{yarn.id}" selection="#{yarnBean.yarn}"
@@ -29,10 +29,10 @@
                     <p:column>
                         <p:commandButton value="Add to Cart"
                                          update=":form:cartQuantity"
-                                         actionListener="#{cartBean.addToCart(yarn)}"/>
+                                         actionListener="#{yarncartBean.addToCart(yarn)}"/>
                         <p:commandButton value="Remove from Cart"
                                          update=":form:cartQuantity"
-                                         actionListener="#{cartBean.removeFromCart(yarn)}"/>
+                                         actionListener="#{yarncartBean.removeFromCart(yarn)}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>

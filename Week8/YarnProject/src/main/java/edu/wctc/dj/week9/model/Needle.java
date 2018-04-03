@@ -7,11 +7,11 @@ package edu.wctc.dj.week9.model;
  */
 public class Needle implements Product {
     private String id;
-    private NeedleType needleType;
-    private Material material;
+    private String needleType;
+    private String material;
     private double size;
     
-    public Needle(String id, NeedleType needleType, Material material, double size) {
+    public Needle(String id, String needleType, String material, double size) {
         setId(id);
         setNeedleType(needleType);
         setMaterial(material);
@@ -26,19 +26,19 @@ public class Needle implements Product {
         this.id = id;
     }
     
-    public final NeedleType getNeedleType() {
+    public final String getNeedleType() {
         return needleType;
     }
     
-    public final void setNeedleType(NeedleType needleType) {
+    public final void setNeedleType(String needleType) {
         this.needleType = needleType;
     }
     
-    public final Material getMaterial() {
+    public final String getMaterial() {
         return material;
     }
 
-    public final void setMaterial(Material material) {
+    public final void setMaterial(String material) {
         this.material = material;
     }
 

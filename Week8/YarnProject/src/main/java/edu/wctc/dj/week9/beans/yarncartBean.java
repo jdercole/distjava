@@ -12,15 +12,15 @@ import javax.faces.context.FacesContext;
  *
  * @author Jenna
  */
-@Named(value = "cartBean")
+@Named(value = "yarncartBean")
 @SessionScoped
-public class CartBean implements Serializable {
+public class yarncartBean implements Serializable {
 
    private final String sessionId;
    private final Cart cart;
    private final CartService cartService = new CartService();
    
-    public CartBean() {
+    public yarncartBean() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         sessionId = facesContext.getExternalContext().getSessionId(true);
         

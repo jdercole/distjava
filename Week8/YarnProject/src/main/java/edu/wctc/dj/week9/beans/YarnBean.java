@@ -55,7 +55,7 @@ public class YarnBean implements Serializable {
         this.yarnList = yarnList;
     }
     
-    public String allYarns() {
+    public String allYarns() throws Exception {
         yarnList = yarnService.getAllYarns();
         return "yarnList";
     }
