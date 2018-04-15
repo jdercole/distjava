@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "edu.wctc.dj.week10")
+@EnableJpaRepositories(basePackages = "edu.wctc.dj.week10.*")
 public class PersistenceJNDIConfig {
     
     @Bean
@@ -29,7 +29,7 @@ public class PersistenceJNDIConfig {
 		emf.setDataSource(dataSource());
 		emf.setJpaVendorAdapter(new EclipseLinkJpaVendorAdapter());
 		// Following required to avoid looking for persistence.xml
-		emf.setPackagesToScan("edu.wctc.dj.week10.namesapp10");
+		emf.setPackagesToScan("edu.wctc.dj.week10.*");
 		emf.setPersistenceUnitName("names-pu");
 		emf.setLoadTimeWeaver(new ReflectiveLoadTimeWeaver());
 

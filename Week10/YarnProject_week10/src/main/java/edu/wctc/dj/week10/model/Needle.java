@@ -23,36 +23,40 @@ public class Needle implements Product {
         setMaterial(material);
         setSize(size);
     }
+    
+    public Needle() {
+    
+    }
 
-    public final String getId() {
+    public String getId() {
         return id;
     }
 
-    public final void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
     
-    public final String getNeedleType() {
+    public String getNeedleType() {
         return needleType;
     }
     
-    public final void setNeedleType(String needleType) {
+    public void setNeedleType(String needleType) {
         this.needleType = needleType;
     }
     
-    public final String getMaterial() {
+    public String getMaterial() {
         return material;
     }
 
-    public final void setMaterial(String material) {
+    public void setMaterial(String material) {
         this.material = material;
     }
 
-    public final double getSize() {
+    public double getSize() {
         return size;
     }
 
-    public final void setSize(double size) {
+    public void setSize(double size) {
         this.size = size;
     }
     

@@ -1,6 +1,7 @@
 
 package edu.wctc.dj.week10.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +12,7 @@ public class Yarn implements Product {
     
     @Id
     @GeneratedValue
+    @Column(name="yarnId")
     private String id;
     
     private String name;
