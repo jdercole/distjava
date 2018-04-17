@@ -9,9 +9,11 @@
         <title>Yarns</title>
     </h:head>
     <h:body>
+            
             <h:form id="form" style="text-align: center;">
                 <p:outputLabel for="cartQuantity" value="Cart:" />
                 <h:outputText id="cartQuantity" value="#{cartBean.itemsInCart}" />
+                <h:link outcome="cartDetail" value="View Cart" />
 
                 <p:dataTable value="#{yarnBean.yarnService.allYarns}" var="yarn" 
                             rowKey="#{yarn.id}" selection="#{yarnBean.yarn}"

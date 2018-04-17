@@ -5,6 +5,7 @@ import edu.wctc.dj.week10.services.CartService;
 import edu.wctc.dj.week10.model.Product;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +17,11 @@ import org.springframework.stereotype.Component;
 @Scope("session")
 public class CartBean implements Serializable {
 
+   @Autowired
+   private CartService cartService;
+    
    private final String sessionId;
    private final Cart cart;
-   private final CartService cartService = new CartService();
    
     public CartBean() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
