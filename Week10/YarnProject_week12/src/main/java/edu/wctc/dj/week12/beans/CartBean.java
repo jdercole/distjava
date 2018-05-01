@@ -1,0 +1,43 @@
+package edu.wctc.dj.week12.beans;
+
+import edu.wctc.dj.week12.model.Cart;
+import edu.wctc.dj.week12.services.CartService;
+import edu.wctc.dj.week12.model.Product;
+import java.io.Serializable;
+import javax.faces.context.FacesContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+
+@Component(value = "cartBean")
+@Scope("session")
+public class CartBean implements Serializable {
+
+   private CartService cartService = new CartService();
+    
+   private final String sessionId;
+   private final Cart cart;
+   
+    public CartBean() {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        sessionId = facesContext.getExternalContext().getSessionId(true);
+        
+        cart = cartService.getContents(sessionId);
+    }
+    
+    public int getItemsInCart(){
+        return cart.getItemsInCart();
+    }
+    
+    public void addToCart(Product product){
+        cart.add(product);
+        cartService.update(sessionId, cart);
+    }
+    
+    public void removeFromCart(Product product) {
+        cart.remove(product);
+        cartService.update(sessionId, cart);
+    }
+    
+}
