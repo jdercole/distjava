@@ -34,7 +34,7 @@ public class YarnController {
     
     @RequestMapping(method= POST, path = "/yarn")
     public void createYarn(@RequestBody Yarn yarn) {
-        yarnService.createYarn(yarn.getName(), yarn.getSkeinLength(), yarn.getColor(), yarn.getPrice());
+        yarnService.createYarn(yarn);
     }
     
     @RequestMapping(method = PUT, path = "/yarn")
@@ -44,6 +44,6 @@ public class YarnController {
     
     @RequestMapping(method = DELETE, path = "/yarn/{id}")
     public void deleteYarn(@PathVariable String id) {
-        yarnService.deleteYarn(id);
+        yarnService.deleteYarn(yarnService.getYarn(id));
     }
 }

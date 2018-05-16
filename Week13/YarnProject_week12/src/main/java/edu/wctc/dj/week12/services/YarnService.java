@@ -40,12 +40,18 @@ public class YarnService {
 //        return yarns;
     }
     
-    public Yarn createYarn(String name, double skeinLength, String color, double price) {
-        Yarn yarn = new Yarn(name, skeinLength, color, price);
-        return yarn;
+    public void createYarn(Yarn yarn) {
+        yarnDao.save(yarn);
+    }
+    
+    public void deleteYarn(Yarn yarn) {
+        yarnDao.delete(yarn);
+    }
+    
+    public void updateYarn(Yarn yarn) {
+        yarnDao.save(yarn);
     }
 
-    
     
 }
 
